@@ -64,7 +64,9 @@
 		{% for repository in site.github.public_repositories %}
 			<li>
 				<a class="post-link" href="{{repository.html_url}}">{{repository.name}}</a>
-				<span>{{repository.description | No Description}}</span>
+				{% if repository.description != blank %}
+					<span>{{repository.description | No Description}}</span>
+				{% endif %}
 			</li>
 		{% endfor %}
 	</ul>
