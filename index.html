@@ -23,10 +23,8 @@
 	<ul class="repo-list">
 		{% for repository in site.github.public_repositories %}
 			<li>
-				<span class="repo-meta">{{repository.date | date: "%b %-d, %Y"}}</span>
-				<h2>
-					<a class="post-link" href="{{repository.html_url}}">{{repository.name}}</a>
-				</h2>
+				<a class="post-link" href="{{repository.html_url}}">{{repository.name}}</a>
+				<span>{{repository.desc}} || {{repository.description}}</span>
 			</li>
 		{% endfor %}
 	</ul>
