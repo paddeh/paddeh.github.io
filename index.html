@@ -2,7 +2,40 @@
 ---
 
 <style>
+	.repo-list
+	{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
 
+	.repo-list li
+	{
+		float: left;
+		display: block;
+		width: 100%;
+		margin: 10px 0;
+	}
+
+	.repo-list li a
+	{
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 18px;
+		float: left;
+		width: 100%;
+	}
+
+	.repo-list li span
+	{
+		float: left;
+		width: 100%;
+		margin: 5px;
+		padding: 5px;
+		background: rgba(0,0,0,0.07);
+		border: 1px solid rgba(0,0,0,0.07);
+		box-sizing: border-box;
+	}
 </style>
 
 <div class="home">
@@ -24,7 +57,7 @@
 		{% for repository in site.github.public_repositories %}
 			<li>
 				<a class="post-link" href="{{repository.html_url}}">{{repository.name}}</a>
-				<span>{{repository.desc}} || {{repository.description}}</span>
+				<span>{{repository.description}}</span>
 			</li>
 		{% endfor %}
 	</ul>
