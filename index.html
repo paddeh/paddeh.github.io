@@ -16,7 +16,20 @@ layout: default
 		{% endfor %}
 	</ul>
 
-	<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+	<h1 class="page-heading">Repositories</h1>
+	<ul class="repo-list">
+		{% for repository in site.github.public_repositories %}
+			<li>
+				<span class="repo-meta">{{repository.date | date: "%b %-d, %Y"}}</span>
+				<h2>
+					<a class="post-link" href="{{repository.html_url}}">{{repository.name}}</a>
+				</h2>
+			</li>
+		{% endfor %}
+	</ul>
+
+
+	<!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 	<p>
 		<strong>Repositories</strong>
@@ -24,5 +37,5 @@ layout: default
 		{% for repository in site.github.public_repositories %}
 			<br /><a href="{{repository.html_url}}">{{repository.name}}</a>
 		{% endfor %}
-	</p>
+	</p> -->
 </div>
