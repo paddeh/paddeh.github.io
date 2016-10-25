@@ -64,8 +64,11 @@
 		{% for repository in site.github.public_repositories %}
 			<li>
 				<a class="post-link" href="{{repository.html_url}}">{{repository.name}}</a>
-				{% if repository.description != blank %}
-					<span>{{repository.description}}</span>
+				{% if repository.description == blank %}
+					<span>Option A</span>
+				{% else %}
+					<span>Option B</span>
+					<!-- <span>{{repository.description}}</span> -->
 				{% endif %}
 			</li>
 		{% endfor %}
