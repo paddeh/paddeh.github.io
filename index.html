@@ -3,6 +3,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE-edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>{{site.title}}</title>
+
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
 		<script src="bootstrap/js/bootstrap.min.js"></script>
@@ -11,9 +17,15 @@
 
 			body
 			{
-				max-width: 1000px;
-				margin: 0 auto;
+				/*max-width: 1000px;*/
+				/*margin: 0 auto;*/
+				padding-top: 50px;
 				background: url(greyzz.png);
+			}
+
+			.starter-template
+			{
+				
 			}
 
 			.repo-list
@@ -54,18 +66,43 @@
 	</head>
 
 	<body>
-		<div class="home">
-			<h1 class="page-heading">Repositories</h1>
-			<ul class="repo-list">
-				{% for repository in site.github.public_repositories %}
-					<li>
-						<a class="post-link" href="{{repository.html_url}}">{{repository.name}}</a>
-						{% if repository.description != nil %}
-							<span>{{repository.description}}</span>
-						{% endif %}
-					</li>
-				{% endfor %}
-			</ul>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only"></span>
+						<span class="icon-only"></span>
+						<span class="icon-only"></span>
+						<span class="icon-only"></span>
+					</button>
+					<a class="navbar-brand" href="#">{{site.title}}</a>
+				</div>
+
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="starter-template">
+				<h1 class="page-heading">Repositories</h1>
+				<ul class="repo-list">
+					{% for repository in site.github.public_repositories %}
+						<li>
+							<a class="post-link" href="{{repository.html_url}}">{{repository.name}}</a>
+							{% if repository.description != nil %}
+								<span>{{repository.description}}</span>
+							{% endif %}
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
 		</div>
 	</body>
 </html>
