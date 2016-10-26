@@ -25,3 +25,4 @@ github_username:  paddeh
 markdown: kramdown
 theme: minima
 repository: paddeh.github.io
+future: true
